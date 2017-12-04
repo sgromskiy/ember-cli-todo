@@ -1,0 +1,14 @@
+{{#if isEdited}}
+	<input disabled="true" type="checkbox" onchange={{action update todo}} checked={{todo.complited}}>
+	<div class="title">
+		{{input class="input" type="text" value=todo.title}}
+	</div>
+	<button {{action "saveEdit" todo}}>Save</button>
+{{else}}
+	<input type="checkbox" onchange={{action update todo}} checked={{todo.complited}}>
+	<div class="title {{if todo.complited 'complited'}}">
+		{{todo.title}}
+	</div>
+	<button {{action "toggleEdit"}}>Edit</button>
+	<button class="danger" {{action delete todo}}>Delete</button>
+{{/if}}

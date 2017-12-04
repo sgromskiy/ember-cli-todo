@@ -1,0 +1,18 @@
+<div class="general-control">
+	<div class="general-control-item">
+		<input id="all" type="checkbox" onchange={{action "checkAll" todos}} checked={{complitedAll}}>
+		<label for="all">Check All</label>
+	</div>
+	<div class="general-control-item">
+		<input id="hide" type="checkbox" onchange={{action "hideComplited" todos}} checked={{isFiltered}}>
+		<label for="hide">Hide complited</label>
+	</div>
+</div>
+
+{{#each filteredTodos as |todo|}}
+	{{todo-item todo=todo update=(action "updateTodo") delete=(action "deleteTodo") save=(action "saveTodo")}}
+{{/each}}
+
+<div class="counter">
+	You have <b>{{total}}</b> todos, and <b>{{incomplete}}</b> of them <mark>{{plural incomplete}}</mark> not done.
+</div>

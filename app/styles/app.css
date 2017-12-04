@@ -1,0 +1,140 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+}
+body::before {
+  content:'';
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(https://picsum.photos/g/600/300/?random) no-repeat 50%;
+  background-size: cover;
+  z-index: 1;
+  opacity: .1;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+body > .ember-view{
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+.my-todo{
+	position: relative;
+	z-index: 5;
+	max-width: 650px;
+	padding: 20px 0;
+	color: #666;
+}
+.my-todo h1 {
+	text-align: center;
+	margin: 0 0 15px;
+	text-shadow: 1px 1px 1px LightSkyBlue;
+}
+.input{
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+button{
+	background: LightSkyBlue;
+	color: white;
+	font-weight: bold;
+	padding: 5px 13px;
+	text-transform: uppercase;
+	font-size: .8em;
+	border: none;
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 3px;
+
+}
+button:hover::before{
+	left: 100%;
+	bottom: 100%;
+}
+button::before{
+	transition: all .3s linear;
+	z-index: -1;
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: white;
+	opacity: .15;
+	border-radius: 3px;
+}
+ .danger {
+ 	background: tomato;
+ }
+.main-input{
+	font-size: 20px;
+	display: block;
+	width: 100%;
+	box-shadow: 0 0 5px LightSkyBlue;
+}
+.todo-item{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 0;
+	border-top: 1px solid #ccc;
+}
+.todo-item .title{
+	flex-grow: 1;
+	padding-left: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.todo-item .title.complited{
+	text-decoration: line-through;
+}
+.todo-item button{
+	margin-left: 10px;
+}
+.counter{
+	border-top: 1px solid #ccc;
+	padding: 5px 0;
+}
+.general-control {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	padding: 10px 0;
+}
+.general-control-item{
+	flex-grow: 1;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+}
+.general-control label{
+	padding-left: 10px;
+}
+[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 0;
+}
